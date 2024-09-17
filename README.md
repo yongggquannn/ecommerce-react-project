@@ -37,3 +37,7 @@ Bonus
 - Persist data of shopping cart even when browser is closed and reopen.
 - Beautify the UI using tailwindcss framework
 - Surprise Us :)
+
+## Notes
+
+I have added README files for both Assignment 1 & 2, which includes technical decisions and assumptions, and how to run the code locally. 

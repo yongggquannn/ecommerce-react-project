@@ -23,17 +23,11 @@ const CategoryProducts = () => {
     fetchCategoryProducts();
   }, [categoryName]);
 
-  if (!categoryName) {
-    
-  }
-
-  const capitalizeFirstLetter = (str: string) =>
-    str.charAt(0).toUpperCase() + str.slice(1);
 
   return (
     <div className="mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">
-        Products in {capitalizeFirstLetter(categoryName as string)}
+        Products in {categoryName}
       </h1>
       <ProductList products={products} />
     </div>

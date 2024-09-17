@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+"use client";
+
+import { createContext, useContext, useState, useEffect } from "react";
 import { CartItem, Product } from "./types";
 
 interface CartContextValue {
@@ -28,7 +30,19 @@ interface Props {
 }
 
 export const CartProvider = ({ children }: Props) => {
+  
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    const storedCartItems = typeof window !== "undefined" && window.localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      setCartItems(JSON.parse(storedCartItems));
+    }
+  }, []);
+
+  useEffect(() => {
+    typeof window !== "undefined" && window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product: Product) => {
     const existingCartItemIndex = cartItems.findIndex(

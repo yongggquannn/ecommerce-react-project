@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "./ui/card"
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 interface Props {
     product: Product;
@@ -13,7 +12,6 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
     const { addToCart } = useCart();
-    const router = useRouter();
   
     const handleAddToCartClick = (product: Product) => {
       addToCart(product);

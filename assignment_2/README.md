@@ -31,8 +31,20 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Technical Decisions and Assumptions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Technical Decisions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Used NextJS as ReactJS framework as it supports server-side rendering (SSR) to improve page loading time and technical SEO.
+
+2. Used TailwindCSS for speedy development & ease development for responsiveness. (E.g. Mobile View & Tablet View)
+
+3. Used shadcn/ui library to significantly reduce the amount of time needed to build beautifully designed components.
+
+### Assumptions
+
+1. Used Typescript for development instead of Javascript as it offers variable declaration, functional paradigm, and type system. It saves development time and allows developers to become more efficient
+
+2. Instead of having a cart page, I have decided to opt for a sidebar to reduce the amount of time required for rendering, and to provide a seamless experience as well.
+
+3. Implemented persistence of data through local storage so that when browser is closed and reopen, items in cart will be fetched from local storage. 
